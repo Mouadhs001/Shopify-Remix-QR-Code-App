@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "d0d05104248a322a3d63610ee043af78"
+name = "qr-code"
+handle = "qr-code-352"
+application_url = "https://puzzles-projectors-vampire-webpage.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-a76cdca0.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://puzzles-projectors-vampire-webpage.trycloudflare.com/auth/callback",
+  "https://puzzles-projectors-vampire-webpage.trycloudflare.com/auth/shopify/callback",
+  "https://puzzles-projectors-vampire-webpage.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
